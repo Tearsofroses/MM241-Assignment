@@ -173,10 +173,8 @@ class Policy2353101(Policy):
 
         # Sort stocks by total area
         total_area_products = sum([prod["size"][0] * prod["size"][1] * prod["quantity"] for prod in observation["products"]])
-        # total_area_products = round(total_area_products*1.2)
         self.sorted_stocks = zip(self.stock_indices, self.total_area_stock)
         self.sorted_stocks = sorted(self.sorted_stocks, key=lambda x: abs(x[1]-total_area_products))
-        # self.sorted_stocks = sorted(self.sorted_stocks, key=lambda x: x[1], reverse=False)
         self.stocks_len = len(self.sorted_stocks)
     # Student code here
     # You can add more functions if needed
